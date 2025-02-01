@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(27, 27, 27);
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+textarea{
+    max-width: 100%;
+    min-width: 100%;
+}
+button{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.container-form{
+    max-width: 600px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#fade, #modal{
+    transition: .5s ease-in-out;
+    opacity: 1;
+    pointer-events: all;
+}
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 1;
+}
+#modal{
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 25%;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+#modal-message{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#close-modal{
+    align-items: flex-end;
+    padding: 1rem 1.5rem;
+}
+#modal.hide, #fade.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+#modal.hide{
+    top: 0;
+}

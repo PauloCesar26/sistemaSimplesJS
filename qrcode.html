@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo01.ico" type="image/x-icon">
+    <title>Mensagem</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> 
+</head>
+<body>
+    <div class="container-qr">
+        <div id="qrcode"></div>
+    </div>
+
+    <button onclick="window.print()">Imprimir QR Code</button>
+
+    <script>
+        const destinoURL = `https://paulocesar26.github.io/TodoList/`;
+        new QRCode(document.getElementById("qrcode"),{
+            text: destinoURL,
+            width: 200,
+            height: 200
+        });
+    </script>
+</body>
+</html>

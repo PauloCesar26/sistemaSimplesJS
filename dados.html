@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleDados.css">
+    <link rel="icon" href="img/logo01.ico" type="image/x-icon">
+    <title>Dados do Formulário</title>
+</head>
+<body>
+    <div class="container-dados">
+        <h2>Dados Enviados:</h2>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Aguarda o carregamento da página
+        document.addEventListener("DOMContentLoaded", () => {
+            // Recupera os dados do localStorage
+            const nameDe = localStorage.getItem("nameDe");
+            const namePara = localStorage.getItem("namePara");
+            const message = localStorage.getItem("message");
+
+            // Verifica se há dados armazenados
+            if(name && message){
+                // Exibe os dados na página dentro da div #output
+                document.querySelector("#output").innerHTML = `
+                    <p><strong>De:</strong> ${nameDe}</p>
+                    <p><strong>Para:</strong> ${namePara}</p>
+                    <p><strong>Mensagem:</strong> ${message}</p>`;
+            } 
+            else{
+                document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
+            }
+
+
+            const qrcodeURL = "qrcode.html";
+            let janelaQR = window.open(qrcodeURL, "janelaQR");
+
+            if(janelaQR){
+                janelaQR.focus();
+            }
+        });
+    </script>
+</body>
+</html>
