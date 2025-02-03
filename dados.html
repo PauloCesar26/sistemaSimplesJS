@@ -34,7 +34,7 @@
             // }
             const savedData = localStorage.getItem("formData");
 
-            if (savedData) {
+            if(savedData){
                 const formData = JSON.parse(savedData);
 
                 // Exibe os dados na página
@@ -42,6 +42,11 @@
                     <p><strong>De:</strong> ${formData.nameDe}</p>
                     <p><strong>Para:</strong> ${formData.namePara}</p>
                     <p><strong>Mensagem:</strong> ${formData.message}</p>
+                `;
+            }
+            else{
+                document.querySelector("#output").innerHTML = `
+                    <p>Nenhuma informação encontrada</p>
                 `;
             }
         });
