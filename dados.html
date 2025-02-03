@@ -17,20 +17,32 @@
         // Aguarda o carregamento da página
         document.addEventListener("DOMContentLoaded", () => {
             // Recupera os dados do localStorage
-            const nameDe = localStorage.getItem("nameDe");
-            const namePara = localStorage.getItem("namePara");
-            const message = localStorage.getItem("message");
+            // const nameDe = localStorage.getItem("nameDe");
+            // const namePara = localStorage.getItem("namePara");
+            // const message = localStorage.getItem("message");
 
-            // Verifica se há dados armazenados
-            if(name && message){
-                // Exibe os dados na página dentro da div #output
+            // // Verifica se há dados armazenados
+            // if(name && message){
+            //     // Exibe os dados na página dentro da div #output
+            //     document.querySelector("#output").innerHTML = `
+            //         <p><strong>De:</strong> ${nameDe}</p>
+            //         <p><strong>Para:</strong> ${namePara}</p>
+            //         <p><strong>Mensagem:</strong> ${message}</p>`;
+            // } 
+            // else{
+            //     document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
+            // }
+            const savedData = localStorage.getItem("formData");
+
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+
+                // Exibe os dados na página
                 document.querySelector("#output").innerHTML = `
-                    <p><strong>De:</strong> ${nameDe}</p>
-                    <p><strong>Para:</strong> ${namePara}</p>
-                    <p><strong>Mensagem:</strong> ${message}</p>`;
-            } 
-            else{
-                document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
+                    <p><strong>De:</strong> ${formData.nameDe}</p>
+                    <p><strong>Para:</strong> ${formData.namePara}</p>
+                    <p><strong>Mensagem:</strong> ${formData.message}</p>
+                `;
             }
         });
     </script>

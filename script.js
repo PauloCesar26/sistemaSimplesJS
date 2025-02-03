@@ -40,14 +40,21 @@ form.addEventListener("submit", (event) => {
     form.submit();
 
     // Captura os dados do formulário
-    const name1 = document.querySelector("#nameDe").value;
-    const name2 = document.querySelector("#namePara").value;
-    const message = document.querySelector("#message").value;
+    // const name1 = document.querySelector("#nameDe").value;
+    // const name2 = document.querySelector("#namePara").value;
+    // const message = document.querySelector("#message").value;
 
-    // Salva cada valor separadamente no localStorage
-    localStorage.setItem("nameDe", name1);
-    localStorage.setItem("namePara", name2);
-    localStorage.setItem("message", message);
+    // // Salva cada valor separadamente no localStorage
+    // localStorage.setItem("nameDe", name1);
+    // localStorage.setItem("namePara", name2);
+    // localStorage.setItem("message", message);
+    const formData = {
+        nameDe: document.querySelector("#nameDe").value,
+        namePara: document.querySelector("#namePara").value,
+        message: document.querySelector("#message").value
+    };
+
+    localStorage.setItem("formData", JSON.stringify(formData));
 
     // Redireciona para a página destino.html
     if (janelaDestino && !janelaDestino.closed) {
