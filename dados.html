@@ -10,31 +10,42 @@
 <body>
     <div class="container-dados">
         <h2>Dados Enviados:</h2>
-        <p><strong>De:</strong> <span id="nameDe"></span></p>
-        <p><strong>Para:</strong> <span id="namePara"></span></p>
-        <p><strong>Mensagem:</strong> <span id="message"></span></p>
+        <div id="output"></div>
     </div>
 
     <script>
         // Aguarda o carregamento da página
-        // document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
+
+    // Pega os parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameDe = decodeURIComponent(urlParams.get("nameDe") || "Não informado");
+        const namePara = decodeURIComponent(urlParams.get("namePara") || "Não informado");
+        const message = decodeURIComponent(urlParams.get("message") || "Nenhuma mensagem");
+
+        // Exibe os dados na página
+        document.getElementById("output").innerHTML = `
+            <p><strong>De:</strong> ${nameDe}</p>
+            <p><strong>Para:</strong> ${namePara}</p>
+            <p><strong>Mensagem:</strong> ${message}</p>
+        `;
+
             // Recupera os dados do localStorage
-            // const nameDe = localStorage.getItem("nameDe");
-            // const namePara = localStorage.getItem("namePara");
-            // const message = localStorage.getItem("message");
+            // const inputName1 = encodeURIComponent(nameDe.value);
+            // const inputName2 = encodeURIComponent(namePara.value);
+            // const inputMessage = encodeURIComponent(textMessage.value);
 
             // // Verifica se há dados armazenados
             // if(name && message){
             //     // Exibe os dados na página dentro da div #output
             //     document.querySelector("#output").innerHTML = `
-            //         <p><strong>De:</strong> ${nameDe}</p>
-            //         <p><strong>Para:</strong> ${namePara}</p>
+            //         <p><strong>De:</strong> ${inputName1}</p>
+            //         <p><strong>Para:</strong> ${inputName2}</p>
             //         <p><strong>Mensagem:</strong> ${message}</p>`;
             // } 
             // else{
             //     document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
             // }
-
 
 
 
@@ -55,18 +66,10 @@
         //             <p>Nenhuma informação encontrada</p>
         //         `;
         //     }
-        // });
+        });
 
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const nameDe = urlParams.get("nameDe");
-        const namePara = urlParams.get("namePara");
-        const message = urlParams.get("message");
 
-        // Exibe os dados na página, se existirem
-        document.getElementById("nameDe").innerHTML = nameDe ? nameDe : "Não informado";
-        document.getElementById("namePara").innerHTML = namePara ? namePara : "Não informado";
-        document.getElementById("message").innerHTML = message ? message : "Não informado";
     </script>
 </body>
 </html>

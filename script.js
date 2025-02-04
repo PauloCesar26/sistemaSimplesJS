@@ -73,6 +73,7 @@ form.addEventListener("submit", (event) => {
         janelaDestino = window.open("dados.html", "janelaDestino");
     }
 
-    window.location.href = `qrcode.html?link=${encodeURIComponent(urlDestino)}`;
+    // window.location.href = `qrcode.html?link=${encodeURIComponent(urlDestino)}`;
+    window.open(`qrcode.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
 
 });
