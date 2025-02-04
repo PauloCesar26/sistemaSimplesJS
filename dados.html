@@ -37,7 +37,7 @@
 
 
 
-            
+
         //     const savedData = localStorage.getItem("formData");
 
         //     if(savedData){
@@ -64,9 +64,9 @@
         const message = urlParams.get("message");
 
         // Exibe os dados na página, se existirem
-        document.getElementById("nameDe").textContent = nameDe ? decodeURIComponent(nameDe) : "Não informado";
-        document.getElementById("namePara").textContent = namePara ? decodeURIComponent(namePara) : "Não informado";
-        document.getElementById("message").textContent = message ? decodeURIComponent(message) : "Não informado";
+        document.getElementById("nameDe").innerHTML = nameDe ? nameDe : "Não informado";
+        document.getElementById("namePara").innerHTML = namePara ? namePara : "Não informado";
+        document.getElementById("message").innerHTML = message ? message : "Não informado";
     </script>
 </body>
 </html>
