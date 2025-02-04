@@ -23,7 +23,7 @@
         // });
         document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const linkDestino = urlParams.get(urlDestino); // Recupera o link enviado
+            const linkDestino = urlParams.get("link"); // Recupera o link enviado
 
             if (linkDestino) {
                 new QRCode(document.getElementById("qrcode"), {
