@@ -1,6 +1,6 @@
 const form = document.querySelector("#form");
-const inputName1 = document.querySelector("#nameDe");
-const inputName2 = document.querySelector("#namePara");
+const nameDe = document.querySelector("#nameDe");
+const namePara = document.querySelector("#namePara");
 const textMessage = document.querySelector("#message");
 
 const closeModal = document.querySelector("#close-modal");
@@ -23,11 +23,11 @@ closeModal.addEventListener("click", () => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     //verificando nome
-    if(inputName1.value === ""){
+    if(nameDe.value === ""){
         showModal("Por favor o nome 1!");
         return;
     }
-    if(inputName2.value === ""){
+    if(namePara.value === ""){
         showModal("Por favor o nome 2!");
         return;
     }
