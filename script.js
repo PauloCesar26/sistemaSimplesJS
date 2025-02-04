@@ -48,13 +48,21 @@ form.addEventListener("submit", (event) => {
     // localStorage.setItem("nameDe", name1);
     // localStorage.setItem("namePara", name2);
     // localStorage.setItem("message", message);
-    const formData = {
-        nameDe: document.querySelector("#nameDe").value,
-        namePara: document.querySelector("#namePara").value,
-        message: document.querySelector("#message").value
-    };
 
-    localStorage.setItem("formData", JSON.stringify(formData));
+
+    // const formData = {
+    //     nameDe: document.querySelector("#nameDe").value,
+    //     namePara: document.querySelector("#namePara").value,
+    //     message: document.querySelector("#message").value
+    // };
+
+    // localStorage.setItem("formData", JSON.stringify(formData));
+
+    const inputName1 = encodeURIComponent(nameDe.value);
+    const inputName2 = encodeURIComponent(namePara.value);
+    const inputMessage = encodeURIComponent(textMessage.value);
+
+    const urlDestino = `https://paulocesar26.github.io/sistemaSimplesJS/dados.html?nameDe=${inputName1}&namePara=${inputName2}&message=${inputMessage}`;
 
     // Redireciona para a página destino.html
     if (janelaDestino && !janelaDestino.closed) {
@@ -64,5 +72,7 @@ form.addEventListener("submit", (event) => {
         // Se não estiver aberta, abre uma nova e armazena a referência
         janelaDestino = window.open("dados.html", "janelaDestino");
     }
+
+    window.location.href = `qrcode.html?link=${encodeURIComponent(urlDestino)}`;
 
 });
