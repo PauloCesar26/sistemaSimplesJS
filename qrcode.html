@@ -27,7 +27,7 @@
 
             if (linkDestino) {
                 new QRCode(document.getElementById("qrcode"), {
-                    text: decodeURIComponent(linkDestino),
+                    text: linkDestino,
                     width: 200,
                     height: 200
                 });

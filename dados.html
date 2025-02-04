@@ -10,12 +10,14 @@
 <body>
     <div class="container-dados">
         <h2>Dados Enviados:</h2>
-        <div id="output"></div>
+        <p><strong>De:</strong> <span id="nameDe"></span></p>
+        <p><strong>Para:</strong> <span id="namePara"></span></p>
+        <p><strong>Mensagem:</strong> <span id="message"></span></p>
     </div>
 
     <script>
         // Aguarda o carregamento da página
-        document.addEventListener("DOMContentLoaded", () => {
+        // document.addEventListener("DOMContentLoaded", () => {
             // Recupera os dados do localStorage
             // const nameDe = localStorage.getItem("nameDe");
             // const namePara = localStorage.getItem("namePara");
@@ -32,24 +34,39 @@
             // else{
             //     document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
             // }
-            const savedData = localStorage.getItem("formData");
 
-            if(savedData){
-                const formData = JSON.parse(savedData);
 
-                // Exibe os dados na página
-                document.querySelector("#output").innerHTML = `
-                    <p><strong>De:</strong> ${formData.nameDe}</p>
-                    <p><strong>Para:</strong> ${formData.namePara}</p>
-                    <p><strong>Mensagem:</strong> ${formData.message}</p>
-                `;
-            }
-            else{
-                document.querySelector("#output").innerHTML = `
-                    <p>Nenhuma informação encontrada</p>
-                `;
-            }
-        });
+
+            
+        //     const savedData = localStorage.getItem("formData");
+
+        //     if(savedData){
+        //         const formData = JSON.parse(savedData);
+
+        //         // Exibe os dados na página
+        //         document.querySelector("#output").innerHTML = `
+        //             <p><strong>De:</strong> ${formData.nameDe}</p>
+        //             <p><strong>Para:</strong> ${formData.namePara}</p>
+        //             <p><strong>Mensagem:</strong> ${formData.message}</p>
+        //         `;
+        //     }
+        //     else{
+        //         document.querySelector("#output").innerHTML = `
+        //             <p>Nenhuma informação encontrada</p>
+        //         `;
+        //     }
+        // });
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameDe = urlParams.get("nameDe");
+        const namePara = urlParams.get("namePara");
+        const message = urlParams.get("message");
+
+        // Exibe os dados na página, se existirem
+        document.getElementById("nameDe").textContent = nameDe ? decodeURIComponent(nameDe) : "Não informado";
+        document.getElementById("namePara").textContent = namePara ? decodeURIComponent(namePara) : "Não informado";
+        document.getElementById("message").textContent = message ? decodeURIComponent(message) : "Não informado";
     </script>
 </body>
 </html>
