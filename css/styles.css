@@ -48,6 +48,7 @@ button, a{
     margin: 3rem auto;
     display: flex;
     flex-direction: column;
+    padding: 0 1.5rem;
 }
 
 
