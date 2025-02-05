@@ -67,15 +67,7 @@ form.addEventListener("submit", (event) => {
     localStorage.setItem("nameDe", nameDe.value);
     localStorage.setItem("namePara", namePara.value);
     localStorage.setItem("message", textMessage.value);
-    
-    // Redireciona para a página destino.html
-    if (janelaDestino && !janelaDestino.closed) {
-        janelaDestino.location.reload(); // Recarrega os dados na aba existente
-        janelaDestino.focus(); // Traz a aba para frente
-    } else {
-        // Se não estiver aberta, abre uma nova e armazena a referência
-        janelaDestino = window.open("dados.html", "janelaDestino");
-    }
+
 
     window.open(`dados.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
     window.open(`qrcode.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
