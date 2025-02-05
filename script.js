@@ -64,6 +64,10 @@ form.addEventListener("submit", (event) => {
 
     const urlDestino = `https://paulocesar26.github.io/sistemaSimplesJS/dados.html?nameDe=${inputName1}&namePara=${inputName2}&message=${inputMessage}`;
 
+    localStorage.setItem("nameDe", nameDe.value);
+    localStorage.setItem("namePara", namePara.value);
+    localStorage.setItem("message", textMessage.value);
+    
     // Redireciona para a página destino.html
     if (janelaDestino && !janelaDestino.closed) {
         janelaDestino.location.reload(); // Recarrega os dados na aba existente
@@ -73,7 +77,7 @@ form.addEventListener("submit", (event) => {
         janelaDestino = window.open("dados.html", "janelaDestino");
     }
 
-    window.location.href = `dados.html?link=${encodeURIComponent(urlDestino)}`;
+    window.open(`dados.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
     window.open(`qrcode.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
 
 });
