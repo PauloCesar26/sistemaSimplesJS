@@ -39,25 +39,6 @@ form.addEventListener("submit", (event) => {
     //todos os campos preenchidos
     form.submit();
 
-    // Captura os dados do formulário
-    // const name1 = document.querySelector("#nameDe").value;
-    // const name2 = document.querySelector("#namePara").value;
-    // const message = document.querySelector("#message").value;
-
-    // // Salva cada valor separadamente no localStorage
-    // localStorage.setItem("nameDe", name1);
-    // localStorage.setItem("namePara", name2);
-    // localStorage.setItem("message", message);
-
-
-    // const formData = {
-    //     nameDe: document.querySelector("#nameDe").value,
-    //     namePara: document.querySelector("#namePara").value,
-    //     message: document.querySelector("#message").value
-    // };
-
-    // localStorage.setItem("formData", JSON.stringify(formData));
-
     const inputName1 = encodeURIComponent(nameDe.value);
     const inputName2 = encodeURIComponent(namePara.value);
     const inputMessage = encodeURIComponent(textMessage.value);
@@ -71,5 +52,4 @@ form.addEventListener("submit", (event) => {
 
     window.open(`dados.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
     window.open(`qrcode.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
-
 });
