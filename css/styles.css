@@ -44,11 +44,12 @@ button, a{
     text-align: center;
 }
 .container-form{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     max-width: 600px;
     margin: 3rem auto;
     display: flex;
     flex-direction: column;
-    padding: 0 1.5rem;
+    padding: 2rem 1.5rem;
 }
 
 

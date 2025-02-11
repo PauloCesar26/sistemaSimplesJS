@@ -17,66 +17,26 @@
         // Aguarda o carregamento da página
         document.addEventListener("DOMContentLoaded", () => {
 
-    // Pega os parâmetros da URL
-        const urlParams = new URLSearchParams(window.location.search);
-        let nameDe = urlParams.get("nameDe");
-        let namePara = urlParams.get("namePara");
-        let message = urlParams.get("message");
+            // Pega os parâmetros da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            let nameDe = urlParams.get("nameDe");
+            let namePara = urlParams.get("namePara");
+            let message = urlParams.get("message");
 
-        // Se não houver parâmetros na URL, buscar no localStorage
-        if (!nameDe || !namePara || !message) {
-            nameDe = localStorage.getItem("nameDe") || "Não informado";
-            namePara = localStorage.getItem("namePara") || "Não informado";
-            message = localStorage.getItem("message") || "Nenhuma mensagem";
-        }
+            // Se não houver parâmetros na URL buscar no localStorage
+            if(!nameDe || !namePara || !message){
+                nameDe = localStorage.getItem("nameDe") || "Não informado";
+                namePara = localStorage.getItem("namePara") || "Não informado";
+                message = localStorage.getItem("message") || "Nenhuma mensagem";
+            }
 
-        // Exibe os dados na página
-        document.getElementById("output").innerHTML = `
-            <p><strong>De:</strong> ${nameDe}</p>
-            <p><strong>Para:</strong> ${namePara}</p>
-            <p><strong>Mensagem:</strong> ${message}</p>
-        `;
-
-            // Recupera os dados do localStorage
-            // const inputName1 = encodeURIComponent(nameDe.value);
-            // const inputName2 = encodeURIComponent(namePara.value);
-            // const inputMessage = encodeURIComponent(textMessage.value);
-
-            // // Verifica se há dados armazenados
-            // if(name && message){
-            //     // Exibe os dados na página dentro da div #output
-            //     document.querySelector("#output").innerHTML = `
-            //         <p><strong>De:</strong> ${inputName1}</p>
-            //         <p><strong>Para:</strong> ${inputName2}</p>
-            //         <p><strong>Mensagem:</strong> ${message}</p>`;
-            // } 
-            // else{
-            //     document.querySelector("#output").innerHTML = "<p>Nenhum dado preenchido</p>";
-            // }
-
-
-
-            // const savedData = localStorage.getItem("formData");
-
-            // if(savedData){
-            //     const formData = JSON.parse(savedData);
-
-            //     // Exibe os dados na página
-            //     document.querySelector("#output").innerHTML = `
-            //         <p><strong>De:</strong> ${formData.nameDe}</p>
-            //         <p><strong>Para:</strong> ${formData.namePara}</p>
-            //         <p><strong>Mensagem:</strong> ${formData.message}</p>
-            //     `;
-            // }
-            // else{
-            //     document.querySelector("#output").innerHTML = `
-            //         <p>Nenhuma informação encontrada</p>
-            //     `;
-            // }
+            // Exibe os dados na página
+            document.getElementById("output").innerHTML = `
+                <p><strong>De:</strong> ${nameDe}</p>
+                <p><strong>Para:</strong> ${namePara}</p>
+                <p><strong>Mensagem:</strong> ${message}</p>
+            `;
         });
-
-
-
     </script>
 </body>
 </html>

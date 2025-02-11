@@ -15,17 +15,11 @@
     <button onclick="window.print()">Imprimir QR Code</button>
 
     <script>
-        // const destinoURL = `https://paulocesar26.github.io/sistemaSimplesJS/dados.html`;
-        // new QRCode(document.getElementById("qrcode"),{
-        //     text: destinoURL,
-        //     width: 200,
-        //     height: 200
-        // });
         document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const linkDestino = urlParams.get("link"); // Recupera o link enviado
 
-            if (linkDestino) {
+            if(linkDestino){
                 new QRCode(document.getElementById("qrcode"), {
                     text: linkDestino,
                     width: 200,
@@ -35,7 +29,7 @@
             else{
                 document.getElementById("qrcode").innerHTML = "<p>Erro ao gerar QR Code.</p>";
             }
-});
+        });
     </script>
 </body>
 </html>
