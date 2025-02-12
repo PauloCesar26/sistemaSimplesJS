@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://paulocesar26.github.io/sistemaSimplesJS/css/styleDados.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="icon" href="img/logo01.ico" type="image/x-icon">
     <title>Dados do Formulário</title>
 </head>
@@ -17,7 +18,7 @@
     <div class="container-dados">
         <div class="container-mensagem">
             <div class="logo">
-                <img src="img/Logo_principal.png">
+                <img src="img/Logo_principal.png" id="logo">
             </div>
             <div class="container-info">
                 <div id="text"></div>
@@ -51,6 +52,34 @@
                 <p class="pedido">De: <span id="de">${nameDe}</span></p>
                 <p class="pedido">Para: <span id="para">${namePara}</span></p>
             `;
+
+            window.sr = ScrollReveal({reset: true});
+            sr.reveal('.container-mensagem',{
+                distance: '450px',
+                origin: 'bottom',
+                duration: 3000,
+                easing: 'ease-in-out',
+            });
+
+            sr.reveal('#mensagem', {
+                distance: '250px',
+                origin: 'left',
+                duration: 5000,
+                easing: 'ease-in-out',
+            });
+
+            sr.reveal('.pedido', {
+                distance: '200px',
+                origin: 'rigth',
+                duration: 5000,
+                easing: 'ease-in-out',
+            });
+
+            sr.reveal('#logo', {
+                rotate: {x:100, y:0, z:0},
+                easing: 'ease-in-out',
+                duration: 4000
+            });
         });
     </script>
 </body>
