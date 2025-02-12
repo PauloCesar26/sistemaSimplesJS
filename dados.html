@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styleDados.css">
     <link rel="icon" href="img/logo01.ico" type="image/x-icon">
     <title>Dados do Formulário</title>
 </head>
 <body>
     <div class="container-dados">
-        <h2>Dados Enviados:</h2>
-        <div id="output"></div>
+        <div class="container-mensagem">
+            <div class="logo">
+                <img src="img/Logo_principal.png">
+            </div>
+            <div class="container-info">
+                <div id="text"></div>
+                <div id="cliente"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -31,10 +44,12 @@
             }
 
             // Exibe os dados na página
-            document.getElementById("output").innerHTML = `
-                <p><strong>De:</strong> ${nameDe}</p>
-                <p><strong>Para:</strong> ${namePara}</p>
-                <p><strong>Mensagem:</strong> ${message}</p>
+            document.getElementById("text").innerHTML = `
+                <p id="mensagem">${message}</p>
+            `;
+            document.getElementById("cliente").innerHTML = `
+                <p class="pedido">De: <span id="de">${nameDe}</span></p>
+                <p class="pedido">Para: <span id="para">${namePara}</span></p>
             `;
         });
     </script>
