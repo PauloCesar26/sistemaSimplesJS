@@ -32,7 +32,7 @@ body{
 }
 .container-dados{
     padding: 1rem 1.5rem;
-    max-width: 30%;
+    width: 30%;
     margin: 3rem auto;
     max-width: 600px;
 }

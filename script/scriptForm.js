@@ -36,8 +36,6 @@ form.addEventListener("submit", (event) => {
         showModal("Por favor, escreva a mensagem!");
         return;
     }
-    //todos os campos preenchidos
-    form.submit();
 
     const inputName1 = encodeURIComponent(nameDe.value);
     const inputName2 = encodeURIComponent(namePara.value);
@@ -52,4 +50,6 @@ form.addEventListener("submit", (event) => {
 
     window.open(`dados.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
     window.open(`qrcode.html?link=${encodeURIComponent(urlDestino)}`, "_blank");
+
+    form.submit();
 });
