@@ -39,7 +39,7 @@ form.addEventListener("submit", (event) => {
 
     const inputName1 = encodeURIComponent(nameDe.value);
     const inputName2 = encodeURIComponent(namePara.value);
-    const inputMessage = encodeURIComponent(textMessage.value);
+    const inputMessage = encodeURIComponent(textMessage.value.replace(/\n/g, "<br>"));
 
     const urlDestino = `https://paulocesar26.github.io/sistemaSimplesJS/dados.html?nameDe=${inputName1}&namePara=${inputName2}&message=${inputMessage}`;
 

@@ -35,7 +35,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             let nameDe = urlParams.get("nameDe");
             let namePara = urlParams.get("namePara");
-            let message = urlParams.get("message");
+            let message = urlParams.get("message").replace(/\n/g, "<br>");
 
             // Se não houver parâmetros na URL buscar no localStorage
             if(!nameDe || !namePara || !message){
@@ -46,7 +46,7 @@
 
             // Exibe os dados na página
             document.getElementById("text").innerHTML = `
-                <p id="mensagem">${message}</p>
+                <p id="mensagem">${message.replace(/\n/g, "<br>")}</p>
             `;
             document.getElementById("cliente").innerHTML = `
                 <p class="pedido">De: <span id="de">${nameDe}</span></p>
