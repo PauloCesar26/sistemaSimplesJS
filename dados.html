@@ -33,9 +33,10 @@
 
             // Pega os parâmetros da URL
             const urlParams = new URLSearchParams(window.location.search);
+            const regex = /\n/g;
             let nameDe = urlParams.get("nameDe");
             let namePara = urlParams.get("namePara");
-            let message = urlParams.get("message").replace(/\n/g, "<br>");
+            let message = urlParams.get("message");
 
             // Se não houver parâmetros na URL buscar no localStorage
             if(!nameDe || !namePara || !message){
@@ -70,7 +71,7 @@
 
             sr.reveal('.pedido', {
                 distance: '200px',
-                origin: 'rigth',
+                origin: 'right',
                 duration: 5000,
                 easing: 'ease-in-out',
             });
